@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [ -z "$1" ]
+then
+    echo "Usage: find-port <port>"
+else
+    lsof -PiTCP -sTCP:LISTEN | grep $1
+fi
